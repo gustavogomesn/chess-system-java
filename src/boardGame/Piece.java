@@ -25,7 +25,9 @@ public abstract class Piece {
 		
 		for (int i = 0; i < possibleMoves().length; i++) {
 			for (int j = 0; j < possibleMoves().length; j++) {
-				return possibleMoves()[i][j];
+				if(possibleMoves()[i][j]) {
+					return true;
+				};
 			}
 		}
 		return false;
