@@ -6,6 +6,7 @@ import java.util.Scanner;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
+import chess.chessMatch;
 
 public class UI {
 
@@ -33,6 +34,12 @@ public class UI {
 	public static void clearScreen() {
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
+	}
+	
+	public static void printMatch(chessMatch chessMatch) {
+		printBoard(chessMatch.getPieces());
+		System.out.println("\nTurn: " + chessMatch.getTurn());
+		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
